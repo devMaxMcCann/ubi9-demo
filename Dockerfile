@@ -1,1 +1,1 @@
-ubi9.bash.Dockerfile
+ubi9.go.Dockerfile

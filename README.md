@@ -33,4 +33,5 @@ docker run --rm --name ubi9-bash-demo ubi9-bash
 # Symlinked commands if you'd like to run this on a different language:
 ln -sf ubi9.bash.Dockerfile Dockerfile
 ln -sf ubi9.go.Dockerfile Dockerfile
+ln -sf ubi9.groovy.Dockerfile Dockerfile
 ```
