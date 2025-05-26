@@ -1,3 +1,1 @@
-FROM redhat/ubi9-minimal
-
-CMD ["bash"]
+ubi9.bash.Dockerfile

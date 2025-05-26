@@ -1,20 +1,18 @@
 # A makefile makes sense here to allow my team to run the build/run/test the application
 IMAGE_NAME=ubi9-demo
 
-.PHONY: build run clean
+.PHONY: all bash clean
 
-build:
-	docker build -t $(IMAGE_NAME) .
+# Default build all
+all: bash
 
-run:
-	docker run --rm $(IMAGE_NAME)
+# Bash Targets
+bash:
+	cd solutions/bash && docker build -f bash.Dockerfile.ubi9 -t ubi9-bash .
 
+bash-run:
+	docker run --rm ubi9-bash
+
+# Clean all images
 clean:
-	docker rmi $(IMAGE_NAME)
-
-# Bonus Target
-gradle-build:
-	./gradlew build
-
-gradle-run:
-	./gradlew run
+	docker rmi ubi9-java ubi9-go ubi9-python ubi9-bash || true
