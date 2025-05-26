@@ -1,7 +1,7 @@
 # A makefile makes sense here to allow my team to run the build/run/test the application
 IMAGE_NAME=ubi9-demo
 
-.PHONY: all bash clean
+.PHONY: all bash go clean
 
 # Default build all
 all: bash
@@ -15,4 +15,4 @@ bash-run:
 
 # Clean all images
 clean:
-	docker rmi ubi9-java ubi9-go ubi9-python ubi9-bash || true
+	docker rmi ubi9-go ubi9-bash || true
